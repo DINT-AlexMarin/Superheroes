@@ -30,10 +30,6 @@ namespace Superheroes
 
             cantidadSuperheroes = listaSuperheroes.Count;
             numeroSuperheroes_TextBlock.Text = heroe + "/" + cantidadSuperheroes;
-            imagen_Imagen.DataContext = listaSuperheroes[heroe - 1];
-            nombre_TextBlock.DataContext = listaSuperheroes[heroe - 1];
-            avengers_Image.DataContext = listaSuperheroes[heroe - 1];
-            xmen_Image.DataContext = listaSuperheroes[heroe - 1];
             fondo_DockPanel.DataContext = listaSuperheroes[heroe - 1];
         }
 
@@ -41,11 +37,6 @@ namespace Superheroes
         {
             if (heroe < cantidadSuperheroes)
                 heroe++;
-            numeroSuperheroes_TextBlock.Text = heroe + "/" + cantidadSuperheroes;
-            imagen_Imagen.DataContext = listaSuperheroes[heroe - 1];
-            nombre_TextBlock.DataContext = listaSuperheroes[heroe - 1];
-            avengers_Image.DataContext = listaSuperheroes[heroe - 1];
-            xmen_Image.DataContext = listaSuperheroes[heroe - 1];
             fondo_DockPanel.DataContext = listaSuperheroes[heroe - 1];
         }
 
@@ -54,10 +45,6 @@ namespace Superheroes
             if (heroe > 1)
                 heroe--;
             numeroSuperheroes_TextBlock.Text = heroe + "/" + cantidadSuperheroes;
-            imagen_Imagen.DataContext = listaSuperheroes[heroe - 1];
-            nombre_TextBlock.DataContext = listaSuperheroes[heroe - 1];
-            avengers_Image.DataContext = listaSuperheroes[heroe - 1];
-            xmen_Image.DataContext = listaSuperheroes[heroe - 1];
             fondo_DockPanel.DataContext = listaSuperheroes[heroe - 1];
         }
     }

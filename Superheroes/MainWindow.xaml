@@ -25,7 +25,7 @@
     </Window.Resources>
     <DockPanel x:Name="fondo_DockPanel" LastChildFill="True" Background="{Binding Path=Heroe, Converter={StaticResource conversorHeroe}}">
         <DockPanel LastChildFill="False" DockPanel.Dock="Top">
-            <TextBlock Style="{StaticResource textoMeme}" Margin="5" DockPanel.Dock="Left" x:Name="nombre_TextBlock" FontFamily="rubik" FontSize="50" Text="{Binding Path=Nombre}"></TextBlock>
+            <TextBlock Style="{StaticResource textoMeme}" FontWeight="Bold" Margin="5" DockPanel.Dock="Left" x:Name="nombre_TextBlock" FontFamily="rubik" FontSize="50" Text="{Binding Path=Nombre}"></TextBlock>
             <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
                       <Image Margin="5" Height="50" Width="50" x:Name="xmen_Image" Source="{Binding Path=Xmen, Converter={StaticResource conversorXmen}}"></Image>
                       <Image Margin="5" Height="50" Width="50" x:Name="avengers_Image" Source="{Binding Path=Vengador, Converter={StaticResource conversorAvenger}}"></Image>
@@ -33,13 +33,13 @@
         </DockPanel>
         <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" Orientation="Horizontal">
             <Image x:Name="leftArrow_Image" Source="assets/arrow.png" Margin="5" Width="20" RenderTransformOrigin="0.5,0.63" MouseLeftButtonDown="leftArrow_Image_MouseLeftButtonDown" ></Image>
-            <TextBlock FontSize="20" Margin="5" x:Name="numeroSuperheroes_TextBlock"></TextBlock>
+            <TextBlock FontWeight="Bold" FontSize="20" Margin="5" x:Name="numeroSuperheroes_TextBlock"></TextBlock>
             <Image x:Name="rightArrow_Image" Width="20" Margin="5" MouseLeftButtonDown="OnClick">
                 <Image.Source>
                     <BitmapImage UriSource="assets/arrow.png" Rotation="Rotate180" />
                 </Image.Source>
             </Image>
         </StackPanel>
-        <Image x:Name="imagen_Imagen" Source="{Binding Path=Imagen}" Stretch="UniformToFill"></Image>
+        <Image Margin="5" x:Name="imagen_Imagen" Source="{Binding Path=Imagen}" Stretch="UniformToFill"></Image>
     </DockPanel>
 </Window>
