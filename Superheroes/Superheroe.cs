@@ -5,11 +5,59 @@ namespace Superheroes
 {
     class Superheroe : INotifyPropertyChanged
     {
-        public string Nombre { get; set; }
-        public string Imagen { get; set; }
-        public bool Vengador { get; set; }
-        public bool Xmen { get; set; }
-        public bool Heroe { get; set; }
+        private string nombre;
+
+        public string Nombre
+        {
+            get { return nombre; }
+            set { nombre = value;
+                this.NotifyPropertyChanged("Nombre");}
+        }
+
+        private string imagen;
+
+        public string Imagen
+        {
+            get { return imagen; }
+            set
+            {
+                imagen = value;
+                NotifyPropertyChanged("Imagen");
+            }
+        }
+        private bool vengador;
+
+        public bool Vengador
+        {
+            get { return vengador; }
+            set
+            {
+                vengador = value;
+                NotifyPropertyChanged("Vengador");
+            }
+        }
+        private bool xmen;
+
+        public bool Xmen
+        {
+            get { return xmen; }
+            set
+            {
+                xmen = value;
+                NotifyPropertyChanged("Xmen");
+            }
+        }
+        private bool heroe;
+
+        public bool Heroe
+        {
+            get { return heroe; }
+            set
+            {
+                heroe = value;
+                NotifyPropertyChanged("Heroe");
+            }
+        }
 
         public Superheroe()
         {
@@ -24,7 +72,13 @@ namespace Superheroes
             Heroe = heroe;
         }
 
+
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public void NotifyPropertyChanged(string propertyName)
+        {
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
         public static List<Superheroe> GetSamples()
         {
