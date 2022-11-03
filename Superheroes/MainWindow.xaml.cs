@@ -20,32 +20,21 @@ namespace Superheroes
     /// </summary>
     public partial class MainWindow : Window
     {
-        int heroe = 1;
-        List<Superheroe> listaSuperheroes = Superheroe.GetSamples();
-        int cantidadSuperheroes;
-
+        SuperheroesVM vm = new SuperheroesVM();
         public MainWindow()
         {
             InitializeComponent();
-
-            cantidadSuperheroes = listaSuperheroes.Count;
-            numeroSuperheroes_TextBlock.Text = heroe + "/" + cantidadSuperheroes;
-            fondo_DockPanel.DataContext = listaSuperheroes[heroe - 1];
+            this.DataContext = vm;
         }
 
-        private void OnClick(object sender, MouseButtonEventArgs e)
+        private void Retroceder(object sender, MouseButtonEventArgs e)
         {
-            if (heroe < cantidadSuperheroes)
-                heroe++;
-            fondo_DockPanel.DataContext = listaSuperheroes[heroe - 1];
+            vm.Retroceder();
         }
 
-        private void leftArrow_Image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void Avanzar(object sender, MouseButtonEventArgs e)
         {
-            if (heroe > 1)
-                heroe--;
-            numeroSuperheroes_TextBlock.Text = heroe + "/" + cantidadSuperheroes;
-            fondo_DockPanel.DataContext = listaSuperheroes[heroe - 1];
+            vm.Avanzar();
         }
     }
 }

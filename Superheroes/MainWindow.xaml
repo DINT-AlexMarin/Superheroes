@@ -32,23 +32,25 @@
             <Setter Property="Width" Value="20"></Setter>
         </Style>
     </Window.Resources>
-    <DockPanel x:Name="fondo_DockPanel" LastChildFill="True" Background="{Binding Path=Heroe, Converter={StaticResource conversorHeroe}}">
+    <DockPanel x:Name="fondo_DockPanel" LastChildFill="True" Background="{Binding Path=Personaje.Heroe, Converter={StaticResource conversorHeroe}}">
         <DockPanel LastChildFill="False" DockPanel.Dock="Top">
-            <TextBlock Style="{StaticResource textoMeme}" FontWeight="Bold" Margin="5" DockPanel.Dock="Left" x:Name="nombre_TextBlock" FontFamily="rubik" FontSize="50" Text="{Binding Path=Nombre}"></TextBlock>
+            <TextBlock Style="{StaticResource textoMeme}" FontWeight="Bold" Margin="5" DockPanel.Dock="Left" x:Name="nombre_TextBlock" FontFamily="rubik" FontSize="50" Text="{Binding Path=Personaje.Nombre}"></TextBlock>
             <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
-                      <Image Style="{StaticResource iconoHeroe}" x:Name="xmen_Image" Source="{Binding Path=Xmen, Converter={StaticResource conversorXmen}}"></Image>
-                      <Image Style="{StaticResource iconoHeroe}" x:Name="avengers_Image" Source="{Binding Path=Vengador, Converter={StaticResource conversorAvenger}}"></Image>
+                      <Image Style="{StaticResource iconoHeroe}" x:Name="xmen_Image" Source="{Binding Path=Personaje.Xmen, Converter={StaticResource conversorXmen}}"></Image>
+                      <Image Style="{StaticResource iconoHeroe}" x:Name="avengers_Image" Source="{Binding Path=Personaje.Vengador, Converter={StaticResource conversorAvenger}}"></Image>
             </StackPanel>
         </DockPanel>
-        <StackPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center" Orientation="Horizontal">
-            <Image Style="{StaticResource Flechas}" x:Name="leftArrow_Image" Source="assets/arrow.png" MouseLeftButtonDown="leftArrow_Image_MouseLeftButtonDown" ></Image>
-            <TextBlock FontWeight="Bold" FontSize="20" Margin="5" x:Name="numeroSuperheroes_TextBlock"></TextBlock>
-            <Image Style="{StaticResource Flechas}" x:Name="rightArrow_Image" MouseLeftButtonDown="OnClick">
+        <StackPanel VerticalAlignment="Center" DockPanel.Dock="Bottom" HorizontalAlignment="Center" Orientation="Horizontal">
+            <Image Style="{StaticResource Flechas}" x:Name="leftArrow_Image" Source="assets/arrow.png" MouseLeftButtonDown="Retroceder" ></Image>
+            <TextBlock Text="{Binding Path=Posicion}"/>
+            <TextBlock Text="/"></TextBlock>
+            <TextBlock Text="{Binding Path=NHeroes}"/>
+            <Image Style="{StaticResource Flechas}" x:Name="rightArrow_Image" MouseLeftButtonDown="Avanzar">
                 <Image.Source>
                     <BitmapImage UriSource="assets/arrow.png" Rotation="Rotate180" />
                 </Image.Source>
             </Image>
         </StackPanel>
-        <Image Margin="5" x:Name="imagen_Imagen" Source="{Binding Path=Imagen}" Stretch="UniformToFill"></Image>
+        <Image Margin="5" x:Name="imagen_Imagen" Source="{Binding Path=Personaje.Imagen}" Stretch="UniformToFill"></Image>
     </DockPanel>
 </Window>
