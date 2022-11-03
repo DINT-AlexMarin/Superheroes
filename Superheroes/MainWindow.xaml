@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Superheroes"
         mc:Ignorable="d"
-        Title="MainWindow" MinHeight="450" MinWidth="800" Icon="assets/shield.ico">
+        Title="Superheroes" MinHeight="450" MinWidth="800" Icon="assets/shield.ico">
     <Window.Resources>
         <local:ConvertidorAvenger x:Key="conversorAvenger"></local:ConvertidorAvenger>
         <local:ConvertidorXmen x:Key="conversorXmen"></local:ConvertidorXmen>
